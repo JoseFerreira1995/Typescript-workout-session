@@ -2,7 +2,7 @@
 
 // 1. Convert Celsius to Fahrenheit
 export function convertToF(celsius: number): number {
-    const fahrenheit = (celsius * 9) / 5 + 32;
+    const fahrenheit: number = (celsius * 9) / 5 + 32;
     return fahrenheit;
 }
 
