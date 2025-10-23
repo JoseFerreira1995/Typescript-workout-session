@@ -106,5 +106,73 @@ function truncateString(str: string, num: number): string {
 truncateString('A-tisket a-tasket A green and yellow basket', 7);
 
 
+//Create a function that looks through an array arr and returns the first element in it that passes a 'truth test'.
+// This means that given an element x, the 'truth test' is passed if func(x) is true.
+// If no element passes the test, return undefined.
 
+
+function findElement(arr: number[], func: any): unknown {
+    let num: number = 0;
+    for (let element of arr) {
+        num = element
+        if (func(num)) {
+            return num
+        }
+    }
+
+    return undefined
+
+}
+
+findElement([1, 2, 3, 4], num => num % 2 === 0);
+
+
+//Check if a value is classified as a boolean primitive. Return true or false.
+
+
+function booWho(bool: boolean) {
+    if (typeof bool === "boolean") {
+        return true
+    }
+    return false
+}
+
+
+booWho(false);
+
+
+//Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+
+function titleCase(str: string): string {
+    let newStr: string[] = str.split(" ")
+    let updatedStrings: string[] = []
+    for (let i = 0; i < newStr.length; i++) {
+        updatedStrings[i] = newStr[i][0].toUpperCase() + newStr[i].slice(1).toLowerCase()
+    }
+
+    return updatedStrings.join(" ")
+
+
+}
+
+titleCase("I'm a little tea pot");
+
+
+/*You are given two arrays and an index.
+
+    Copy each element of the first array into the second array, in order.
+
+    Begin inserting elements at index n of the second array.
+
+    Return the resulting array. The input arrays should remain the same after the function runs.*/
+
+
+function frankenSplice(arr1: any[], arr2: any[], n: number): any[] {
+    let newArr2 = arr2.slice()
+    newArr2.splice(n, 0, ...arr1)
+
+    return newArr2
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
 
